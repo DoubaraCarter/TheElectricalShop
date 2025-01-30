@@ -9,33 +9,53 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="poppins-regular">
-  <!-- Navigation Bar -->
   <header id="navbar" class="py-3 fixed w-full z-50 transition-colors duration-300 bg-transparent text-white">
-    <div class="mx-auto px-12">
-      <div class="flex flex-wrap items-center justify-center lg:justify-start">
-      <img src="./images/Frame 1.svg" class="w-[150px]" alt="">
-
-        <ul id="navlinks" class="flex flex-wrap justify-center lg:justify-start col-12 lg:col-auto lg:me-auto mb-2 lg:mb-0 space-x-4 font-medium">
+    <div class="mx-auto px-6 lg:px-12">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <img src="./images/Frame 1.svg" class="w-[150px]" alt="Logo" />
+  
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="lg:hidden text-3xl">
+          <i class='bx bx-menu'></i>
+        </button>
+  
+        <!-- Navigation Links (Hidden on Small Screens) -->
+        <ul id="navlinks" class="hidden lg:flex space-x-6 font-medium">
           <li><a href="#" class="px-2 hover:text-blue-600">Home</a></li>
           <li><a href="#" class="px-2 hover:text-blue-600">Features</a></li>
           <li><a href="#" class="px-2 hover:text-blue-600">About</a></li>
-          <li><a href="#" class="px-2 hover:text-blue-600">Blog</a></li>
+          <li><a href="./pages/blog.html" class="px-2 hover:text-blue-600">Blog</a></li>
           <li><a href="#" class="px-2 hover:text-blue-600">Contact</a></li>
         </ul>
-
-        <!-- <form class="flex col-12 lg:col-auto mb-3 lg:mb-0 lg:me-3">
-          <input
-            type="search"
-            class="w-full lg:w-auto px-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white"
-            placeholder="Search..."
-            aria-label="Search"
-          />
-        </form> -->
-
-        <div id="nav-btn" class="flex items-center space-x-4">
-          <i class='bx bxs-cart text-2xl hover:text-blue-600 cursor-pointer'  ></i>
-          <i class='bx bx-heart text-2xl hover:text-blue-600 cursor-pointer' ></i>
+  
+        <!-- Cart & Wishlist Icons -->
+        <div id="nav-btn" class="hidden lg:flex items-center space-x-4">
+          <i class='bx bxs-cart text-2xl hover:text-blue-600 cursor-pointer'></i>
+          <i class='bx bx-heart text-2xl hover:text-blue-600 cursor-pointer'></i>
         </div>
+      </div>
+    </div>
+  
+    <!-- Mobile Menu (Slide-in) -->
+    <div id="mobile-menu" class="fixed top-0 right-[-100%] w-3/4 h-screen bg-black text-white flex flex-col space-y-1 items-center lg:hidden transition-transform duration-300">
+      <!-- Close Button -->
+      <button id="close-btn" class="absolute top-6 right-6 text-white text-3xl">
+        <i class='bx bx-x'></i>
+      </button>
+
+      <div class="h-1/2 flex flex-col w-full gap-2 px-3 mt-16">
+        <a href="#" class="text-base hover:text-blue-600">Home</a>
+        <a href="#" class="text-base hover:text-blue-600">Features</a>
+        <a href="#" class="text-base hover:text-blue-600">About</a>
+        <a href="./pages/blog.html" class="text-base hover:text-blue-600">Blog</a>
+        <a href="#" class="text-base hover:text-blue-600">Contact</a>
+      </div>
+  
+      <!-- Cart & Wishlist Icons -->
+      <div class="flex items-center space-x-4 gap-10">
+        <i class='bx bxs-cart text-2xl hover:text-blue-600 cursor-pointer'></i>
+        <i class='bx bx-heart text-2xl hover:text-blue-600 cursor-pointer'></i>
       </div>
     </div>
   </header>
@@ -77,10 +97,10 @@
     </div>
   
     <!-- Heading & Description -->
-    <div class="container mx-auto flex justify-between items-center relative z-10">
+    <div class="container mx-auto flex flex-col sm:flex-row  justify-between items-center  relative z-10">
       <!-- Heading -->
       <h1 class="text-4xl font-bold text-blue-800">
-        Explore Our Tech Spaces 🚀
+        Explore Our Categories 🚀
       </h1>
       <!-- Description -->
       <p class="text-lg text-gray-700 max-w-lg">
@@ -123,37 +143,35 @@
   
     </div>
   </div>
-  
-  
-
-   <!-- About Us -->
 
    <!-- Blog Section -->
    <div class="relative px-12 py-20 flex items-center justify-center w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 overflow-hidden">
     <!-- Floating Icons -->
-    <i class="bx bx-code-block absolute text-white text-3xl animate-float top-10 left-10 opacity-50"></i>
-    <i class="bx bx-shield-alt-2 absolute text-white text-3xl animate-float-slow top-20 right-20 opacity-50"></i>
-    <i class="bx bx-cloud absolute text-white text-3xl animate-float bottom-10 left-1/3 opacity-50"></i>
-    <i class="bx bx-network-chart absolute text-white text-3xl animate-float-slow bottom-5 right-1/4 opacity-50"></i>
-    <i class="bx bx-chip absolute text-white text-3xl animate-float top-1/3 right-10 opacity-50"></i>
-    <i class="bx bx-lock-alt absolute text-white text-3xl animate-float bottom-1/3 left-1/4 opacity-50"></i>
-    <i class="bx bx-server absolute text-white text-3xl animate-float-slow top-5 right-1/3 opacity-50"></i>
+    <i class="bx bx-code-block absolute text-white text-3xl animate-float top-10 left-10 opacity-25 sm:opacity-50"></i>
+    <i class="bx bx-shield-alt-2 absolute text-white text-3xl animate-float-slow top-20 right-20 opacity-25 sm:opacity-50"></i>
+    <i class="bx bx-cloud absolute text-white text-3xl animate-float bottom-10 left-1/3 opacity-25 sm:opacity-50"></i>
+    <i class="bx bx-network-chart absolute text-white text-3xl animate-float-slow bottom-5 right-1/4 opacity-25 sm:opacity-50"></i>
+    <i class="bx bx-chip absolute text-white text-3xl animate-float top-1/3 right-10 opacity-25 sm:opacity-50"></i>
+    <i class="bx bx-lock-alt absolute text-white text-3xl animate-float bottom-1/3 left-1/4 opacity-25 sm:opacity-50"></i>
+    <i class="bx bx-server absolute text-white text-3xl animate-float-slow top-5 right-1/3 opacity-25 sm:opacity-50"></i>
   
-    <div class="flex items-center justify-center gap-5 lg:gap-10 py-5 w-full relative z-10">
+    <div class="flex items-center justify-center gap-5 lg:gap-10 py-1 sm:py-5 w-full relative z-10">
       <!-- Content Section -->
-      <div class="w-1/2 text-center">
+      <div class="w-full sm:w-1/2 text-center">
         <h1 class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
           The Digital Library
         </h1>
         <p class="text-sm text-gray-300 italic mb-5">
           Your gateway to the ever-evolving world of technology. From groundbreaking innovations to essential coding tips, stay ahead with in-depth articles and expert perspectives.
         </p>
-        <button
+        <a href="./pages/blog.html">
+          <button
           type="button"
           class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer"
         >
           Start Reading
         </button>
+        </a>
       </div>
     </div>
   </div>
@@ -215,13 +233,13 @@
   <!-- Footer Section -->
   <div class="px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-300">
     <footer class="container mx-auto flex flex-wrap justify-between items-center py-6">
-      <p class="w-full md:w-auto text-gray-600">&copy; 2024 Company, Inc</p>
+      <p class="w-full md:w-auto text-gray-600 text-center ">&copy; 2024 Company, Inc</p>
   
       <a href="/" class="w-full md:w-auto flex items-center justify-center mb-4 md:mb-0">
         <img src="./images/Frame 1.svg" class="w-[180px]" alt="">
       </a>
   
-      <ul class="flex flex-wrap justify-center md:justify-end space-x-4 text-gray-600">
+      <ul class="flex flex-wrap justify-center sm:justify-end space-x-4 text-gray-600">
         <li><a href="#" class="hover:text-blue-600 transition">Home</a></li>
         <li><a href="#" class="hover:text-blue-600 transition">Features</a></li>
         <li><a href="#" class="hover:text-blue-600 transition">About</a></li>
@@ -231,12 +249,6 @@
     </footer>
   </div>
   
-  
-  
-  
-  
-   
-
   <script src="./script.js"></script>
 </body>
 </html>
