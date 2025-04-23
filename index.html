@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Electrical Shop</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles/reviews.css">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -22,11 +23,10 @@
   
         <!-- Navigation Links (Hidden on Small Screens) -->
         <ul id="navlinks" class="hidden lg:flex space-x-6 font-medium">
-          <li><a href="#" class="px-2 hover:text-blue-600">Home</a></li>
-          <li><a href="#" class="px-2 hover:text-blue-600">Features</a></li>
-          <li><a href="#" class="px-2 hover:text-blue-600">About</a></li>
-          <li><a href="./pages/blog.html" class="px-2 hover:text-blue-600">Blog</a></li>
-          <li><a href="#" class="px-2 hover:text-blue-600">Contact</a></li>
+          <li><a href="#" data-target="home" class="scroll-link px-2 hover:text-blue-600">Home</a></li>
+          <li><a href="#" data-target="features" class="scroll-link px-2 hover:text-blue-600">Features</a></li>
+          <li><a href="#" data-target="blog" class="scroll-link px-2 hover:text-blue-600">Blog</a></li>
+          <li><a href="#" data-target="contact" class="scroll-link px-2 hover:text-blue-600">Contact</a></li>
         </ul>
   
         <!-- Cart & Wishlist Icons -->
@@ -47,7 +47,6 @@
       <div class="h-1/2 flex flex-col w-full gap-2 px-3 mt-16">
         <a href="#" class="text-base hover:text-blue-600">Home</a>
         <a href="#" class="text-base hover:text-blue-600">Features</a>
-        <a href="#" class="text-base hover:text-blue-600">About</a>
         <a href="./pages/blog.html" class="text-base hover:text-blue-600">Blog</a>
         <a href="#" class="text-base hover:text-blue-600">Contact</a>
       </div>
@@ -61,7 +60,7 @@
   </header>
 
   <!-- Hero Section -->
-  <div class="min-h-screen flex items-center justify-center px-12 py-5 pt-16 w-full bg-[url(./images/workspace.jpg)] bg-cover bg-center relative">
+  <div id="home" class="min-h-screen flex items-center justify-center px-12 py-5 pt-16 w-full bg-[url(./images/workspace.jpg)] bg-cover bg-center relative">
     <!-- Overlay to dim the background -->
     <div class="absolute inset-0 bg-black/75"></div>
   
@@ -87,7 +86,7 @@
   </div>
 
   <!-- Features Section -->
-  <div class="relative bg-gradient-to-r from-blue-100 to-blue-300 py-20 px-12">
+  <div id="features" class="relative bg-gradient-to-r from-blue-100 to-blue-300 py-20 px-5 sm:px-12">
   
     <!-- Floating Icons Background -->
     <div class="absolute inset-0 pointer-events-none">
@@ -112,40 +111,46 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 py-12 relative z-10">
       
       <!-- The Shop -->
-      <div class="relative group bg-[url(./images/shop.jpg)] bg-center bg-no-repeat bg-cover shadow-lg rounded-lg overflow-hidden h-[250px] hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black/75 px-6 py-5 transition-all opacity-0 group-hover:opacity-100 group-hover:bg-black/60">
-          <h2 class="text-white group-hover:text-blue-400 text-2xl font-medium transition-colors duration-300">
-            The Shop
-          </h2>
-          <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">Explore amazing products</p>
+      <a href="./pages/shop.html">
+        <div class="relative group bg-[url(./images/shop.jpg)] bg-center bg-no-repeat bg-cover shadow-lg rounded-lg overflow-hidden h-[250px] hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 flex flex-col justify-center items-center bg-black/75 px-6 py-5 transition-all opacity-0 group-hover:opacity-100 group-hover:bg-black/60">
+            <h2 class="text-white group-hover:text-blue-400 text-2xl font-medium transition-colors duration-300">
+              The Shop
+            </h2>
+            <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">Explore amazing products</p>
+          </div>
         </div>
-      </div>
+      </a>
   
       <!-- 3D Printing -->
-      <div class="relative group bg-[url(./images/ender3.jpg)] bg-center bg-no-repeat bg-cover shadow-lg rounded-lg overflow-hidden h-[250px] hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black/75 px-6 py-5 transition-all opacity-0 group-hover:opacity-100 group-hover:bg-black/60">
-          <h2 class="text-white group-hover:text-blue-400 text-2xl font-medium transition-colors duration-300">
-            3D Printing
-          </h2>
-          <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">Bringing ideas to life</p>
+      <a href="./pages/3d-printer.html">
+        <div class="relative group bg-[url(./images/ender3.jpg)] bg-center bg-no-repeat bg-cover shadow-lg rounded-lg overflow-hidden h-[250px] hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 flex flex-col justify-center items-center bg-black/75 px-6 py-5 transition-all opacity-0 group-hover:opacity-100 group-hover:bg-black/60">
+            <h2 class="text-white group-hover:text-blue-400 text-2xl font-medium transition-colors duration-300">
+              3D Printing
+            </h2>
+            <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">Bringing ideas to life</p>
+          </div>
         </div>
-      </div>
+      </a>
   
       <!-- The Embedded Lab -->
-      <div class="relative group bg-[url(./images/solder.jpg)] bg-center bg-no-repeat bg-cover shadow-lg rounded-lg overflow-hidden h-[250px] hover:scale-105 transition-transform duration-500">
-        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black/75 px-6 py-5 transition-all opacity-0 group-hover:opacity-100 group-hover:bg-black/60">
-          <h2 class="text-white group-hover:text-blue-400 text-2xl font-medium transition-colors duration-300">
-            The Embedded Lab
-          </h2>
-          <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">Building the future with tech</p>
+      <a href="./pages/embeddedLab.html">
+        <div class="relative group bg-[url(./images/solder.jpg)] bg-center bg-no-repeat bg-cover shadow-lg rounded-lg overflow-hidden h-[250px] hover:scale-105 transition-transform duration-500">
+          <div class="absolute inset-0 flex flex-col justify-center items-center bg-black/75 px-6 py-5 transition-all opacity-0 group-hover:opacity-100 group-hover:bg-black/60">
+            <h2 class="text-white group-hover:text-blue-400 text-2xl font-medium transition-colors duration-300">
+              The Embedded Lab
+            </h2>
+            <p class="text-gray-400 group-hover:text-gray-200 transition-colors duration-300">Building the future with tech</p>
+          </div>
         </div>
-      </div>
+      </a>
   
     </div>
   </div>
 
-   <!-- Blog Section -->
-   <div class="relative px-12 py-20 flex items-center justify-center w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 overflow-hidden">
+  <!-- Blog Section -->
+  <div id="blog" class="relative px-2 sm:px-12 py-20 flex items-center justify-center w-full bg-gradient-to-r from-blue-900 via-blue-700 to-blue-800 overflow-hidden">
     <!-- Floating Icons -->
     <i class="bx bx-code-block absolute text-white text-3xl animate-float top-10 left-10 opacity-25 sm:opacity-50"></i>
     <i class="bx bx-shield-alt-2 absolute text-white text-3xl animate-float-slow top-20 right-20 opacity-25 sm:opacity-50"></i>
@@ -177,7 +182,7 @@
   </div>
 
   <!-- Contact Section -->
-  <div class="relative bg-gradient-to-r from-blue-100 to-blue-300 py-20 px-12">
+  <div id="contact" class="relative bg-gradient-to-r from-blue-100 to-blue-300 py-20 px-2 sm:px-12">
   
     <!-- Floating Icons Background -->
     <div class="absolute inset-0 pointer-events-none">
@@ -199,28 +204,28 @@
   
       <!-- Right: Contact Form -->
       <div class="bg-white shadow-lg rounded-lg p-8">
-        <form class="space-y-6">
+        <form id="contact-form" class="space-y-6">
           
           <!-- Name -->
           <div>
             <label for="name" class="block text-gray-700 font-medium">Name</label>
-            <input type="text" id="name" placeholder="Your Name" class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <input type="text" id="name" placeholder="Your Name" class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
           </div>
   
           <!-- Email -->
           <div>
             <label for="email" class="block text-gray-700 font-medium">Email</label>
-            <input type="email" id="email" placeholder="Your Email" class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <input type="email" id="email" placeholder="Your Email" class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
           </div>
   
           <!-- Message -->
           <div>
             <label for="message" class="block text-gray-700 font-medium">Message</label>
-            <textarea id="message" rows="4" placeholder="Write your message..." class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+            <textarea id="message" rows="4" placeholder="Write your message..." class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
           </div>
   
           <!-- Submit Button -->
-          <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+          <button id="send-btn" type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300">
             Send Message
           </button>
   
@@ -228,6 +233,87 @@
       </div>
   
     </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <div class="relative px-2 sm:px-12 flex items-center justify-center bg-gradient-to-r from-blue-100 to-blue-300">
+      <!-- Customer Reviews Section -->
+      <section class="w-full py-12 overflow-hidden">
+          <div class="border-2 border-blue-200 bg-white rounded-2xl shadow-lg p-8">
+            <h2 class="text-2xl font-semibold text-center text-blue-800 mb-10">What Our Customers Say</h2>
+        
+            <!-- Carousel Wrapper -->
+            <div class="carousel-wrapper relative overflow-hidden" id="carouselWrapper">
+              <div class="flex w-max gap-10 carousel-track" id="carouselTrack">
+                
+                <!-- Testimonial 1 -->
+                <div class="testimonial bg-blue-50 p-6 rounded-lg shadow-md border border-blue-100 w-80 shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/100?img=12" class="w-12 h-12 rounded-full border-2 border-blue-600" alt="Customer avatar" />
+                    <div class="ml-4">
+                      <h3 class="text-lg font-semibold text-blue-800">Jane Doe</h3>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 italic">"Amazing experience! The model was printed exactly to spec, and the quality was top-notch. Quick turnaround too!"</p>
+                </div>
+        
+                <!-- Testimonial 2 -->
+                <div class="testimonial bg-blue-50 p-6 rounded-lg shadow-md border border-blue-100 w-80 shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/100?img=33" class="w-12 h-12 rounded-full border-2 border-blue-600" alt="Customer avatar" />
+                    <div class="ml-4">
+                      <h3 class="text-lg font-semibold text-blue-800">Mark T.</h3>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 italic">"The team helped refine my rough sketch into a solid model. Their feedback and attention to detail were invaluable."</p>
+                </div>
+        
+                <!-- Testimonial 3 -->
+                <div class="testimonial bg-blue-50 p-6 rounded-lg shadow-md border border-blue-100 w-80 shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/100?img=56" class="w-12 h-12 rounded-full border-2 border-blue-600" alt="Customer avatar" />
+                    <div class="ml-4">
+                      <h3 class="text-lg font-semibold text-blue-800">Amina Yusuf</h3>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 italic">"I love the transparent pricing and ease of uploading models. This is my go-to place for quick custom prints!"</p>
+                </div>
+        
+                <!-- Duplicate only if scrolling -->
+                <div class="testimonial bg-blue-50 p-6 rounded-lg shadow-md border border-blue-100 w-80 shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/100?img=12" class="w-12 h-12 rounded-full border-2 border-blue-600" alt="Customer avatar" />
+                    <div class="ml-4">
+                      <h3 class="text-lg font-semibold text-blue-800">Jane Doe</h3>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 italic">"Amazing experience! The model was printed exactly to spec, and the quality was top-notch. Quick turnaround too!"</p>
+                </div>
+        
+                <div class="testimonial bg-blue-50 p-6 rounded-lg shadow-md border border-blue-100 w-80 shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/100?img=33" class="w-12 h-12 rounded-full border-2 border-blue-600" alt="Customer avatar" />
+                    <div class="ml-4">
+                      <h3 class="text-lg font-semibold text-blue-800">Mark T.</h3>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 italic">"The team helped refine my rough sketch into a solid model. Their feedback and attention to detail were invaluable."</p>
+                </div>
+        
+                <div class="testimonial bg-blue-50 p-6 rounded-lg shadow-md border border-blue-100 w-80 shrink-0">
+                  <div class="flex items-center mb-4">
+                    <img src="https://i.pravatar.cc/100?img=56" class="w-12 h-12 rounded-full border-2 border-blue-600" alt="Customer avatar" />
+                    <div class="ml-4">
+                      <h3 class="text-lg font-semibold text-blue-800">Amina Yusuf</h3>
+                    </div>
+                  </div>
+                  <p class="text-gray-700 italic">"I love the transparent pricing and ease of uploading models. This is my go-to place for quick custom prints!"</p>
+                </div>
+        
+              </div>
+            </div>
+          </div>
+      </section>
   </div>
 
   <!-- Footer Section -->
@@ -250,5 +336,92 @@
   </div>
   
   <script src="./script.js"></script>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    // Contact form functionality
+    // Initialize EmailJS with your user ID
+    emailjs.init("LTlkUgD5RZlxBeIqz");  // Replace with your actual EmailJS user ID
+
+    // Form submission handler
+    document.getElementById('contact-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+  
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+      const sendButton = document.getElementById('send-btn');
+  
+      // Simple Email Validation
+      if (!validateEmail(email)) {
+        console.log('Please enter a valid email address.');
+        return;
+      }
+  
+      // Disable the button and change text while sending
+      sendButton.disabled = true;
+      sendButton.innerHTML = `
+        <svg class="animate-spin h-5 w-5 mr-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m7-7H5" />
+        </svg>
+        Sending...
+      `;
+  
+      // Send email using EmailJS
+      try {
+        const response = await emailjs.send("service_vab15jd", "template_qqdn20n", {
+          from_name: name,
+          from_email: email,
+          message: message
+        });
+  
+        if (response.status === 200) {
+          sendButton.innerHTML = 'Message Sent!';
+          setTimeout(() => {
+            sendButton.innerHTML = 'Send Message';
+            sendButton.disabled = false;
+          }, 2000);  // Re-enable the button after 2 seconds
+        } else {
+          console.log('Failed to send the message. Please try again later.');
+          sendButton.disabled = false;
+          sendButton.innerHTML = 'Send Message';
+        }
+      } catch (error) {
+        console.error('Error sending email:', error);
+        console.log('An error occurred. Please try again later.');
+        sendButton.disabled = false;
+        sendButton.innerHTML = 'Send Message';
+      }
+    });
+  
+    // Simple Email Validation Function
+    function validateEmail(email) {
+      const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      return regex.test(email);
+    }
+  </script>
+  <script>
+    document.querySelectorAll(".scroll-link").forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault(); 
+        const targetId = this.getAttribute("data-target");
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    });
+  </script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const testimonials = document.querySelectorAll('.testimonial');
+      const track = document.getElementById('carouselTrack');
+  
+      if (testimonials.length > 3) {
+        track.classList.add('scroll');
+      }
+    });
+  </script>
 </body>
 </html>
